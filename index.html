@@ -1,0 +1,828 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<script src="bootstrap.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script> 
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style type="text/css">
+body {
+    font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 980px){
+    body {
+        width: 980px;
+    }
+}
+
+h1 {
+    font-weight:300;
+    line-height: 1.15em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+a:link,a:visited {
+    color: #5364cc;
+    text-decoration: none;
+}
+a:hover {
+    color: #208799;
+}
+h1 {
+    text-align: center;
+}
+h2,h3 {
+    text-align: left;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+h2 {
+    font-weight: 400;
+    margin: 16px 0px 4px 0px;
+}
+h3 {
+    font-weight: 600;
+    margin: 16px 0px 4px 0px;
+}
+
+.paper-title {
+    padding: 1px 0px 1px 0px;
+}
+section {
+    margin: 32px 0px 32px 0px;
+    text-align: justify;
+    clear: both;
+}
+.col-5 {
+     width: 20%;
+     float: left;
+}
+.col-4 {
+     width: 25%;
+     float: left;
+}
+.col-3 {
+     width: 33%;
+     float: left;
+}
+.col-2 {
+     width: 50%;
+     float: left;
+}
+.col-1 {
+     width: 100%;
+     float: left;
+}
+
+.author-row, .affil-row {
+    font-size: 26px;
+}
+
+.author-row-new { 
+    text-align: center; 
+}
+
+.author-row-new a {
+    display: inline-block;
+    font-size: 20px;
+    padding: 4px;
+}
+
+.author-row-new sup {
+    color: #313436;
+    font-size: 12px;
+}
+
+.affiliations-new {
+    font-size: 18px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.row {
+    margin: 16px 0px 16px 0px;
+}
+.authors {
+    font-size: 26px;
+}
+.affiliatons {
+    font-size: 18px;
+}
+.affil-row {
+    margin-top: 18px;
+}
+.teaser {
+    max-width: 100%;
+}
+.text-center {
+    text-align: center;  
+}
+.screenshot {
+    width: 256px;
+    border: 1px solid #ddd;
+}
+.screenshot-el {
+    margin-bottom: 16px;
+}
+hr {
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid #ddd;
+    margin: 0;
+}
+.material-icons {
+    vertical-align: -6px;
+}
+p {
+    line-height: 1.25em;
+}
+.caption {
+    font-size: 16px;
+    color: #666;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+
+video {
+    display: block;
+    margin: auto;
+}
+
+
+figure {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#bibtex pre {
+    font-size: 14px;
+    background-color: #eee;
+    padding: 16px;
+}
+.blue {
+    color: #2c82c9;
+    font-weight: bold;
+}
+.orange {
+    color: #d35400;
+    font-weight: bold;
+}
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.paper-btn-coming-soon {
+    position: relative; 
+    top: 0;
+    left: 0;
+}
+
+.coming-soon {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+}
+
+.paper-btn {
+  position: relative;
+  text-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  
+  background-color: #5364cc;
+  color: white !important;
+  font-size: 20px;
+  width: 100px;
+  font-weight: 600;
+}
+.paper-btn-parent {
+    display: flex;
+    justify-content: center;
+    /* margin: 16px 0px; */
+    margin: 0px 0px;
+}
+
+.paper-btn:hover {
+    opacity: 0.85;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.venue {
+    font-size: 23px;
+}
+
+.topnav {
+    background-color: #EEEEEE;
+    overflow: hidden;
+}
+
+.topnav div {
+    max-width: 1070px;
+    margin: 0 auto;
+}
+
+.topnav a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.topnav img {
+    padding: 2px 0px;
+    width: 100%;
+    margin: 0.2em 0px 0.3em 0px;
+    vertical-align: middle;
+}
+
+pre {
+    font-size: 0.9em;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 3px;
+    background-color: rgb(235, 235, 235);
+    overflow-x: auto;
+}
+
+.download-thumb {
+    display: flex;
+}
+
+@media only screen and (max-width: 620px) {
+    .download-thumb {
+        display: none;
+    }
+}
+
+.paper-stuff {
+    width: 50%;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 620px) {
+    .paper-stuff {
+        width: 100%;
+    }
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  text-align: center;
+  float: left;
+  width: 16.666%;
+  padding: 5px;
+}
+.column3 {
+  text-align: center;
+  float: left;
+  width: 33.333%;
+  padding: 5px;
+}
+.column4 {
+  text-align: center;
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+.column5 {
+  text-align: center;
+  float: left;
+  width: 20%;
+  padding: 5px;
+}
+.border-right {
+    border-right: 1px solid black;
+}
+.border-bottom{
+    border-bottom: 1px solid black;
+}
+
+
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.figure-img {
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+
+
+
+
+
+
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+
+
+
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .column3 {
+    width: 100%;
+  }
+}
+
+</style>
+<link rel="stylesheet" href="bootstrap-grid.css">
+<link rel="icon" type="image/x-icon" href="mfiles/favicon.png">
+
+<script type="text/javascript" src="../js/hidebib.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+    <head>
+        <title> OPEN TEACH: A Versatile Teleoperation System for Robotic Manipulation</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:description" content="OPEN TEACH: A Versatile Teleoperation System for Robotic Manipulation"/>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+        <meta name="twitter:title" content="OPEN TEACH: A Versatile Teleoperation System for Robotic Manipulation">
+        <meta name="twitter:description" content="">
+        <meta name="twitter:image" content="">
+    </head>
+
+ <body>
+
+
+<div class="container">
+    <div class="paper-title">
+    <h1> 
+        OPEN TEACH: A Versatile Teleoperation System for Robotic Manipulation
+    </div>
+
+    <!-- <div id="authors">
+        <center>
+            <div class="author-row-new">
+                <a href="">ABCD*</a>,
+                <a href="">EFGH*</a>
+            </div>
+        </center>
+        <center>
+
+        <br>* Equal contribution
+
+        </center>
+
+        <div style="clear: both">
+            <div class="paper-btn-parent">
+                <a class="paper-btn" href="">
+                        <span class="material-icons"> description </span> 
+                    Paper
+                </a>
+            <div class="paper-btn-parent">
+                <a class="paper-btn" href="">
+                        <span class="material-icons"> description </span> 
+                    arXiv
+                </a>
+            <div class="paper-btn-coming-soon">
+                <a class="paper-btn" href="">
+                        <span class="material-icons"> code </span>
+                    Code
+                </a>
+            </div>
+        </div>
+    </div> -->
+
+    <br>
+
+    <div class="embed-container">
+        <iframe width="640" height="360" 
+        src="https://www.youtube.com/embed/MIqVHN8L5vU?si=xvYkDPdyr7DfHyON" 
+        frameborder="0" allowfullscreen></iframe>
+    </div>
+    <style>
+        .embed-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        }
+        .embed-container iframe,
+        .embed-container object,
+        .embed-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        }
+    </style>
+
+    
+    <section id="abstract"/>
+        <hr>
+        <h2>Abstract</h2>
+        <div class="flex-row">
+            <p>
+                Open-sourced, user-friendly tools form the bedrock
+                of scientific advancement across disciplines. The widespread
+                adoption of data-driven learning has led to remarkable progress
+                in multi-fingered dexterity, bimanual manipulation, and applica-
+                tions ranging from logistics to home robotics. However, existing
+                data collection platforms are often proprietary, costly, or tailored
+                to specific robotic morphologies. We present OPEN TEACH, a new
+                teleoperation system leveraging VR headsets to immerse users in
+                mixed reality for intuitive robot control. Built on the affordable
+                Meta Quest 3, which costs $500, OPEN TEACH enables real-time
+                control of various robots, including multi-fingered hands and
+                bimanual arms, through an easy-to-use app. Using natural hand
+                gestures and movements, users can manipulate robots at up to
+                90Hz with smooth visual feedback and interface widgets offering
+                closeup environment views. We demonstrate OPEN TEACH’s
+                versatility across 35 tasks on different robots. A comprehensive
+                user study indicates significant improvement in teleoperation
+                capability over the AnyTeleop framework. Further experiments
+                exhibit the collected data’s compatibility with policy learning
+                on 10 dexterous and contact-rich manipulation tasks. Currently
+                supporting Franka, xArm, Jaco, and Allegro platforms, OPEN
+                TEACH is fully open-sourced to promote broader adoption.
+            </p>
+        </div>
+    </section>
+    <section id="method"/>
+        <!-- <hr> -->
+        <!-- <h2>Fast Imitation of Skills from Humans (FISH)</h2> -->
+
+        <br><br>
+        <center>
+            <div class="mx-auto">
+                <img class="card-img-top" src="./mfiles/images/intro_compressed.jpg" style="width:900">
+            </div>
+        </center>
+
+        <!-- Video style -->
+        <style>
+            select {
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 5px;
+            }
+        
+            video {
+                display: block;
+                max-width: 500px;
+                margin-top: 20px;
+            }
+        </style>
+    </section>
+
+    <section>
+        <hr>
+        <h2>Hardware</h2>
+        OPEN TEACH utilizes the Quest 3 VR headset for teleoperation, providing low latency and high-frequency visual feedback. The Quest 3 is chosen for its affordability and accessibility.
+        Below we provide videos of the full-color passthrough provided by Quest 3, and the user interface of the Open Teach app. As shown, we implement a screen within the VR app that displays 
+        the feed from a camera positioned within the scene. This enables the user to view a robotic scene both through their eyes, via visual passthrough, as well as realtime streams from 
+        the robot’s camera. We emphasize the exceptional clarity of the Quest 3 visual passthrough, enabling users to perceive tasks in a 3D environment rather than solely on a 2D screen. 
+        Furthermore, the high-frequency, low-latency teleoperation facilitated by Open Teach allows users to observe real-time movements of the robot, enabling immediate corrections for any errors in its pose.
+        <br><br>
+        <label for="video-select">Passthrough videos:</label>
+        <select id="video-select" onchange="displayVideo()">
+            <option value="mfiles/videos/passthrough/passthrough_make_sandwich_8x.mp4">Make sandwich (8X)</option>
+            <option value="mfiles/videos/passthrough/passthrough_basket_4x.mp4">Pack and Lift a Basket (4X)</option>
+            <option value="mfiles/videos/passthrough/passthrough_kinova_iron_4x.mp4">Iron Towel (4X)</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <div id="video-container">
+            <video id="selected-video" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo() {
+                var selectElement = document.getElementById("video-select");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo();
+        </script>
+        <br><br>
+        <hr>
+
+        <br><br>
+        <h2>Tasks</h2>
+        Utilizing Open Teach, we execute a <strong><span style="color: green;">total of 35 tasks</span></strong> across three real-world environments and two simulated platforms,
+        each featuring distinct robot configurations. This underscores Open Teach's role as a versatile teleoperation 
+        platform, seamlessly compatible with various robot platforms and morphologies.
+        <br>
+        <h3> Franka-Allegro</h3>
+        <label for="video-select1">Task:</label>
+        <select id="video-select1" onchange="displayVideo1()">
+            <option value="mfiles/videos/franka allegro/pick_basket_8x.mp4">Pack and Lift a Basket (8X)</option>
+            <option value="mfiles/videos/franka allegro/muffin_in_oven.mp4">Put Muffin in the Oven (8X)</option>
+            <option value="mfiles/videos/franka allegro/pick_tea_sachet_1x.mp4">Pick Up Tea Satchet (1X)</option>
+            <option value="mfiles/videos/franka allegro/box_open_2x.mp4">Open Box (2X)</option>
+            <option value="mfiles/videos/franka allegro/unlatch_box_open_4x.mp4">Undo Latch and Open Box (4X)</option>
+            <option value="mfiles/videos/franka allegro/slot_battery_2x.mp4">Slot Battery (2X)</option>
+            <option value="mfiles/videos/franka allegro/grasp_and_twist_2x.mp4">Grasp Object and Twist (2X)</option>
+            <option value="mfiles/videos/franka allegro/grasp sponge_2x.mp4">Grasp Sponge (2X)</option>
+            <option value="mfiles/videos/franka allegro/shell_game_8x.mp4">Shell Game (8X)</option>
+            </select>
+
+        <div id="video-container">
+            <video id="selected-video1" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo1() {
+                var selectElement = document.getElementById("video-select1");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video1");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo1();
+        </script>
+
+        <h3> Kinova-Allegro</h3>
+        <label for="video-select2">Task:</label>
+        <select id="video-select2" onchange="displayVideo2()">
+            <option value="mfiles/videos/kinova allegro/iron_cloth_4x.mp4">Iron Towel (4X)</option>
+            <option value="mfiles/videos/kinova allegro/laptop_open_2x.mp4">Open Laptop (2X)</option>
+            <option value="mfiles/videos/kinova allegro/open_box_pick_object_8x.mp4">Open Box and Pick Object (8X)</option>
+            <option value="mfiles/videos/kinova allegro/stack_cubes_8x.mp4">Stack Blocks (8X)</option>
+            <option value="mfiles/videos/kinova allegro/write_alphabet_4x.mp4">Write Alphabet (4X)</option>
+            <option value="mfiles/videos/kinova allegro/hit_hammer_8x.mp4">Hit Hammer (8X)</option>
+            <option value="mfiles/videos/kinova allegro/unfold_cloth_8x.mp4">Unfold Towel (8X)</option>
+            <option value="mfiles/videos/kinova allegro/open_ketchup_bottle_8x.mp4">Open Ketchup Bottle (8X)</option>
+            <option value="mfiles/videos/kinova allegro/slide_drawer_8x.mp4">Open Drawer (8X)</option>
+        </select>
+
+        <div id="video-container">
+            <video id="selected-video2" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo2() {
+                var selectElement = document.getElementById("video-select2");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video2");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo2();
+        </script>
+
+        <br>
+        <h3> Bimanual</h3>
+        <label for="video-select3">Task:</label>
+        <select id="video-select3" onchange="displayVideo3()">
+            <option value="mfiles/videos/bimanual/make_sandwich_8x.mp4">Make Sandwich (8X)</option>
+            <option value="mfiles/videos/bimanual/insert_usb_2x.mp4">Insert USB (2X)</option>
+            <option value="mfiles/videos/bimanual/slice_cucumber.mp4">Slice Cucumber (8X)</option>
+            <option value="mfiles/videos/bimanual/toast_bread_4x.mp4">Toast Bread (4X)</option>
+            <option value="mfiles/videos/bimanual/sweep_2x.mp4">Sweep Dirt Off the Table (2X)</option>
+            <option value="mfiles/videos/bimanual/unfold_bimanual_4x.mp4">Unfold Cloth (4X)</option>
+            <option value="mfiles/videos/bimanual/can_handover_4x.mp4">Handover Can (4X)</option>
+            <option value="mfiles/videos/bimanual/uncap_marker_2x.mp4">Uncap Marker (2X)</option>
+            <option value="mfiles/videos/bimanual/pour_2x.mp4">Pour Sprinkles (2X)</option>
+        </select>
+
+        <div id="video-container">
+            <video id="selected-video3" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo3() {
+                var selectElement = document.getElementById("video-select3");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video3");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo3();
+        </script>
+
+        <br>
+        <h3> Allegro sim</h3>
+        <label for="video-select4">Task:</label>
+        <select id="video-select4" onchange="displayVideo4()">
+            <option value="mfiles/videos/allegro sim/flip_cube_1x.mp4">Flip Cube</option>
+            <option value="mfiles/videos/allegro sim/grasp sponge.mp4">Flip Sponge</option>
+            <option value="mfiles/videos/allegro sim/pinch_grasp.mov">Pinch Grasp</option>
+        </select>
+
+        <div id="video-container">
+            <video id="selected-video4" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo4() {
+                var selectElement = document.getElementById("video-select4");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video4");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo4();
+        </script>
+
+        <br>
+        <h3> LIBERO sim</h3>
+        <label for="video-select5">Task:</label>
+        <select id="video-select5" onchange="displayVideo5()">
+            <option value="mfiles/videos/libero/organize_things_in_a_basket_1x.mp4">Organize Basket</option>
+            <option value="mfiles/videos/libero/put_pan_on_stove.mp4">Put Pan on Stove and Turn it On</option>
+            <option value="mfiles/videos/libero/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate.mp4">Place White Mug on Left Plate</option>
+            <option value="mfiles/videos/libero/KITCHEN_SCENE3_turn_on_the_stove.mp4">Turn on Stove</option>
+            <option value="mfiles/videos/libero/close_top_drawer.mp4">Close Top Drawer of Cabinet</option>
+        </select>
+
+        <div id="video-container">
+            <video id="selected-video5" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo5() {
+                var selectElement = document.getElementById("video-select5");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video5");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo5();
+        </script>
+        <br><br>
+        <hr>
+
+        <br><br>
+        <h2>Policy Learning</h2>
+        In addition to collecting demonstrations, we highlight the value of collected data in policy training across the Franka 
+        Allegro setup and two simulated environments: Libero and Allegro Sim. Using behavior cloning and inverse reinforcement 
+        learning, we train policies for 10 tasks, achieving an impressive <strong><span style="color: green;">average success rate of 87%</span></strong>. 
+        This validates the efficacy of the data acquired via Open Teach for policy learning.
+        <br><br>
+
+        <label for="video-select6">Task:</label>
+        <select id="video-select6" onchange="displayVideo6()">
+            <option value="mfiles/videos/franka allegro/pick_tea_sachet_1x.mp4">Pick Up Tea Satchet (1X)</option>
+            <option value="mfiles/videos/franka allegro/box_open_2x.mp4">Open Box (2X)</option>
+            <option value="mfiles/videos/franka allegro/grasp sponge_2x.mp4">Grasp Sponge (2X)</option>
+            <option value="mfiles/videos/franka allegro/grasp_and_twist_2x.mp4">Grasp Object and Twist (2X)</option>
+            <option value="mfiles/videos/allegro sim/flip_cube_1x.mp4">Flip Cube</option>
+            <option value="mfiles/videos/allegro sim/grasp sponge.mp4">Flip Sponge</option>
+            <option value="mfiles/videos/allegro sim/pinch_grasp.mov">Pinch Grasp</option>
+            <option value="mfiles/videos/libero/close_top_drawer.mp4">Close Top Drawer of Cabinet</option>
+            <option value="mfiles/videos/libero/KITCHEN_SCENE3_turn_on_the_stove.mp4">Turn on Stove</option>
+            <option value="">Pick and Place Soup into Basket</option>
+        </select>
+
+        <div id="video-container">
+            <video id="selected-video6" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo6() {
+                var selectElement = document.getElementById("video-select6");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video6");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo6();
+        </script>
+        <br><br>
+        <hr>
+
+        <br><br>
+        <h2>Comparison with Baselines</h2>
+        We provide a comparison between existing teleoperation systems and observe that Open Teach is the only one that 
+        is <strong><span style="color: green;">calibration free, support multiple arms and hands and most importantly, is fully open source</span></strong>.
+        <br><br>
+        <center>
+            <div class="mx-auto">
+                <img class="card-img-top" src="./mfiles/images/comparison.png" style="width:700">
+            </div>
+        </center>
+        <br><br>
+        <hr>
+
+        <br><br>
+        <h2>User Study</h2>
+        We conducted a user study with 15 participants to assess the intuitiveness and user-friendliness of our framework for inexperienced users. 
+        We provide task performance videos from these users. Overall, we found that new users take <span class="blue">2.25x longer</span> and achieve 
+        a <span class="blue">success rate of 76%</span> compared to experts. This observation highlights that while our system is intuitive for new 
+        users, prolonged training can lead to further improvement in their performance.
+        
+        <br><br>
+        <label for="video-select7">Tasks performed by users:</label>
+        <select id="video-select7" onchange="displayVideo7()">
+            <option value="mfiles/videos/user study/open_box_2x.mp4">Open Box of Mints (2X)</option>
+            <option value="mfiles/videos/user study/flip_cube_1x.mp4">Flip Cube (1X)</option>
+            <option value="mfiles/videos/user study/pinch_grasp_1x.mp4">Pinch Grasp (1X)</option>
+            <option value="mfiles/videos/user study/pour_4x.mp4">Pour (4X)</option>
+            <option value="mfiles/videos/user study/pick_n_place_2x.mp4">Pick and Place (2X)</option>
+        </select>
+
+        <div id="video-container">
+            <video id="selected-video7" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo7() {
+                var selectElement = document.getElementById("video-select7");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video7");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo7();
+        </script>
+
+        <br><br>
+        <hr>
+
+    </section>
+
+   
+
+    <section>
+        This webpage template was recycled from <a href='https://nv-tlabs.github.io/LION/'>here</a>.
+    </section>
+    
+
+
+</div>
+</body>
+</html>
