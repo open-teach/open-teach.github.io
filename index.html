@@ -737,7 +737,36 @@ pre {
             // Display the first video when the page loads
             displayVideo5();
         </script>
-        <br><br>
+        <br>
+
+        <h3> Hello-Stretch</h3>
+        <label for="video-select6">Task:</label>
+        <select id="video-select6" onchange="displayVideo6()">
+            <option value="mfiles/videos/hello-stretch/door_open.mp4">Door Opening</option>
+            <option value="mfiles/videos/hello-stretch/drawer_opening.mp4">Drawer Opening</option>
+            <option value="mfiles/videos//hello-stretch/PickandPlace.mp4">Pick and drop trash</option>
+        </select>
+
+        <div id="video-container">
+            <video id="selected-video6" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo6() {
+                var selectElement = document.getElementById("video-select6");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video6");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo6();
+        </script>
+        <br>
+        
+        <br>
         <hr>
 
         <br><br>
@@ -789,7 +818,7 @@ pre {
         <br><br>
         <center>
             <div class="mx-auto">
-                <img class="card-img-top" src="./mfiles/images/comparison.png" style="width:700">
+                <img class="card-img-top" src="./mfiles/images/new_comparison.png" style="width:700">
             </div>
         </center>
         <br><br>
