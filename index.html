@@ -438,8 +438,8 @@ pre {
         </center> -->
         <center>
             <div class="is-size-5 affil-row">
-                <span class="author-block"><sup>1</sup>New York University;</span>
-                <span class="author-block"><sup>2</sup>Meta AI</span>
+                <span class="author-block"><sup>1</sup>New York University    </span>
+                <span class="author-block"><sup>2</sup>Meta</span>
             </div>
         </center>
 
@@ -499,19 +499,20 @@ pre {
                 to specific robotic morphologies. We present OPEN TEACH, a new
                 teleoperation system leveraging VR headsets to immerse users in
                 mixed reality for intuitive robot control. Built on the affordable
-                Meta Quest 3, which costs $500, OPEN TEACH enables real-time
-                control of various robots, including multi-fingered hands and
-                bimanual arms, through an easy-to-use app. Using natural hand
-                gestures and movements, users can manipulate robots at up to
-                90Hz with smooth visual feedback and interface widgets offering
-                closeup environment views. We demonstrate OPEN TEACH’s
-                versatility across 38 tasks on different robots. A comprehensive
-                user study indicates significant improvement in teleoperation
-                capability over the AnyTeleop framework. Further experiments
-                exhibit the collected data’s compatibility with policy learning
-                on 10 dexterous and contact-rich manipulation tasks. Currently
-                supporting Franka, xArm, Jaco, and Allegro platforms, OPEN
-                TEACH is fully open-sourced to promote broader adoption.
+                Meta Quest 3, which costs $500, OPEN TEACH enables real-
+                time control of various robots, including multi-fingered hands,
+                bimanual arms, and mobile manipulators, through an easy-to-
+                use app. Using natural hand gestures and movements, users can
+                manipulate robots at up to 90Hz with smooth visual feedback
+                and interface widgets offering closeup environment views. We
+                demonstrate the versatility of OPEN TEACH across 38 tasks on
+                different robots. A comprehensive user study indicates significant
+                improvement in teleoperation capability over the AnyTeleop
+                framework. Further experiments exhibit that the collected data
+                is compatible with policy learning on 10 dexterous and contact-
+                rich manipulation tasks. Currently supporting Franka, xArm,
+                Jaco, Allegro, and Hello Stretch platforms, OPEN TEACH is fully
+                open-sourced to promote broader adoption.
             </p>
         </div>
     </section>
@@ -777,8 +778,8 @@ pre {
         This validates the efficacy of the data acquired via Open Teach for policy learning.
         <br><br>
 
-        <label for="video-select6">Task:</label>
-        <select id="video-select6" onchange="displayVideo6()">
+        <label for="video-select7">Task:</label>
+        <select id="video-select7" onchange="displayVideo7()">
             <option value="mfiles/videos/franka allegro/pick_tea_sachet_1x.mp4">Pick Up Tea Satchet (1X)</option>
             <option value="mfiles/videos/franka allegro/box_open_2x.mp4">Open Box (2X)</option>
             <option value="mfiles/videos/franka allegro/grasp sponge_2x.mp4">Grasp Sponge (2X)</option>
@@ -788,25 +789,25 @@ pre {
             <option value="mfiles/videos/allegro sim/pinch_grasp.mov">Pinch Grasp</option>
             <option value="mfiles/videos/libero/close_top_drawer.mp4">Close Top Drawer of Cabinet</option>
             <option value="mfiles/videos/libero/KITCHEN_SCENE3_turn_on_the_stove.mp4">Turn on Stove</option>
-            <option value="">Pick and Place Soup into Basket</option>
+            <option value="mfiles/videos/libero/place_soup.avi">Pick and Place Soup into Basket</option>
         </select>
 
         <div id="video-container">
-            <video id="selected-video6" controls>
+            <video id="selected-video7" controls>
                 Your browser does not support the video tag.
             </video>
         </div>
 
         <script>
-            function displayVideo6() {
-                var selectElement = document.getElementById("video-select6");
+            function displayVideo7() {
+                var selectElement = document.getElementById("video-select7");
                 var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
-                var videoElement = document.getElementById("selected-video6");
+                var videoElement = document.getElementById("selected-video7");
                 videoElement.src = selectedVideo;
             }
 
             // Display the first video when the page loads
-            displayVideo6();
+            displayVideo7();
         </script>
         <br><br>
         <hr>
@@ -832,8 +833,8 @@ pre {
         users, prolonged training can lead to further improvement in their performance.
         
         <br><br>
-        <label for="video-select7">Tasks performed by users:</label>
-        <select id="video-select7" onchange="displayVideo7()">
+        <label for="video-select8">Tasks performed by users:</label>
+        <select id="video-select8" onchange="displayVideo8()">
             <option value="mfiles/videos/user study/open_box_2x.mp4">Open Box of Mints (2X)</option>
             <option value="mfiles/videos/user study/flip_cube_1x.mp4">Flip Cube (1X)</option>
             <option value="mfiles/videos/user study/pinch_grasp_1x.mp4">Pinch Grasp (1X)</option>
@@ -842,21 +843,21 @@ pre {
         </select>
 
         <div id="video-container">
-            <video id="selected-video7" controls>
+            <video id="selected-video8" controls>
                 Your browser does not support the video tag.
             </video>
         </div>
 
         <script>
-            function displayVideo7() {
-                var selectElement = document.getElementById("video-select7");
+            function displayVideo8() {
+                var selectElement = document.getElementById("video-select8");
                 var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
-                var videoElement = document.getElementById("selected-video7");
+                var videoElement = document.getElementById("selected-video8");
                 videoElement.src = selectedVideo;
             }
 
             // Display the first video when the page loads
-            displayVideo7();
+            displayVideo8();
         </script>
 
         <br><br>
